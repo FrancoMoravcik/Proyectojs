@@ -30,13 +30,32 @@
 
 /*NAVBAR*/
 
-.navBar {
-    width: 100%;
-    height: 90px;
-    display: flex;
+
+.navB {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 90px 60px;
+    grid-template-areas: "caja1NavB caja1NavB caja1NavB"
+                         "caja2NavB caja2NavB caja2NavB";
+   position: sticky;
+   top: 0;                      
 }
 
-.pNavbar {
+.caja1NavB {
+grid-area: caja1NavB;
+background-color: white;
+width: 100%;
+display: flex;
+}
+
+.box1NavB {
+    width: 33%;
+    display: flex;
+    justify-content: start;
+   align-items: center;
+}
+
+.pNavb {
     font-size: 40px;
     font-family: 'Cairo', sans-serif;
     font-weight: 500;
@@ -44,28 +63,21 @@
     color:#2c6e49;
 }
 
-.spanNavBar {
+.spanNavB {
     font-size: 25px;
     color: black;
     font-weight: bold;
     letter-spacing: 2px;
 }
 
-.caja1NavBar {
-    width: 33%;
-    display: flex;
-    justify-content: start;
-   align-items: center;
+.box2NavB {
+width: 33%;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
-.caja2NavBar {
-    width: 33%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.buttonNavBar {
+.buttonNavB {
     height: 35px;
     margin-right: 2px;
     padding: 10px;
@@ -76,55 +88,58 @@
     font-weight: bold;
 }
 
-.inputNavBar {
+.inputNavB {
     height: 35px;
     width: 300px;
     padding-left: 10px;
     font-family: 'Montserrat', sans-serif;
 }
 
-.caja3NavBar {
+.box3NavB {
     width: 33%;
     display: flex;
-    justify-content: end;
     align-items: center;
-}
+    justify-content: end;
+    }
 
-.imgNavBar {
+ .imgNavB {
     width: 30px;
    margin-right: 20px;
-}
+ }   
+    
 
-/*HEADERNAV*/
-
-.headerBar {
+.caja2NavB {
+    grid-area: caja2NavB;
     background-color: #2c6e49;
     height: 60px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-}
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.267);
+  
+    }
 
-ul {
+.ulCaja2NB {
     display: flex;
     list-style: none;
+}    
+
+.ulCaja2NB .liCaja2NB  {
+    padding: 20px 30px;  
+ }
+
+
+ .ulCaja2NB .liCaja2NB .aCaja2NB {
+    text-decoration: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    transition: all .4s;
+    letter-spacing: 1px;
 }
 
-ul li {
-   padding: 20px 30px;  
-}
-
-ul li a {
-     text-decoration: none;
-     color: white;
-     font-family: 'Montserrat', sans-serif;
-     font-size: 17px;
-     transition: all .4s;
-     letter-spacing: 1px;
-}
-
-ul li a:hover {
-    color: rgba(255, 255, 255, 0.705)
+.ulCaja2NB .liCaja2NB .aCaja2NB:hover {
+   color: rgba(255, 255, 255, 0.705)
 }
 
 /*SECCION 1*/
@@ -183,7 +198,8 @@ ul li a:hover {
 footer {
     display: flex;
     height: 250px;
-    background-color: #2c6e4925;
+    background-color: #1c1c1c;
+
 }
 
 .logoFooter {
@@ -192,7 +208,7 @@ footer {
 }
 
 .spanFooter {
-    color: black;
+    color: white;
 }
 
 .imgFooter {
@@ -231,6 +247,10 @@ footer {
     margin-left: 80px;
 }
 
+.sF {
+    color: white;
+}
+
 .boxInfo {
     display: flex;
     align-items: center;
@@ -254,10 +274,9 @@ footer {
 }
 
 .pInfo {
-    color: black;
+    color: white;
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
-    font-weight: bold;
 }
 
 .pTelefono {
@@ -332,7 +351,7 @@ footer {
 
 .inputContacto {
     border: none;
-    border-bottom: 2px solid #1c1c1c;
+    border-bottom: 2px solid #1c1c1c3d;
     width: 300px;
     height: 25px;
     cursor: pointer;
@@ -361,7 +380,7 @@ footer {
 .botonContacto {
     background-color: #1c1c1c;
     color: white;
-    margin-right: 15px;
+    margin-right: 20px;
     padding: 12px;
     border: none;
     font-family: 'Montserrat', sans-serif;
@@ -383,4 +402,231 @@ footer {
 .h2Contacto {
     color: #1c1c1c;
     font-family: 'Montserrat', sans-serif;
+}
+
+/*PRODUCTOS*/
+
+.mainProductos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 2500px;
+    grid-template-areas: "seccion1Productos seccion2Productos seccion2Productos seccion2Productos seccion2Productos";
+}
+
+.seccion1Productos {
+    height: 2500px;
+    grid-area: seccion1Productos;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 0px 10px #1c1c1c25;
+}
+
+.cajaS1P {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.H2S1P {
+    color: #1c1c1cd7;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    margin-top: 50px;
+    text-decoration:underline;
+}
+
+.pS1P {
+    width: 290px;
+    color: #1c1c1cd7;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #1c1c1c4f;
+    border-top: 1px solid #1c1c1c4f;
+}
+
+.spanProd {
+    color: #1c1c1c94;
+}
+
+.ulProductos {
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.ulProductos .liProductos{
+    padding: 3px 0px;
+    text-align: start;
+    width: 240px;
+}
+
+.ulProductos .liProductos .aProductos {
+    color: #2c6e49;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight:  bold;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.ulProductos .liProductos .aProductos:hover {
+    color:#1c1c1c;
+    
+}
+
+.seccion2Productos {
+    height: 2500px;
+    grid-area: seccion2Productos;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 500px 500px 500px 500px 500px;
+    grid-template-areas: "aside1SP aside1SP aside1SP"
+                         "aside2SP aside2SP aside2SP"
+                         "aside3SP aside3SP aside3SP"
+                         "aside4SP aside4SP aside4SP"
+                         "aside5SP aside5SP aside5SP";
+}
+
+.aside1SP {
+    grid-area: aside1SP;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cajaProduct {
+    height: 400px;
+    width: 250px;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.267);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box1SP {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.aB1SP {
+    text-decoration: none;
+    color: white;
+    background-color: #2c6e49;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    padding: 4px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.box2SP {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img4SP {
+width: 200px;
+}
+
+.box3SP {
+    text-align: center;
+}
+
+.h3B3SP {
+    padding: 5px;
+    color: #1c1c1c;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.pB3SP {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    color: #1c1c1cbe;
+}
+
+.box4SP {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.boton1B1SP {
+    color: white;
+    background-color: #2c6e49;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.boton1B1SP:hover {
+    background-color: #1c1c1c;
+}
+
+.boton2B1SP {
+    color: white;
+    background-color: #2c6e49;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.boton2B1SP:hover {
+    background-color: #1c1c1c;
+}
+
+.aside2SP {
+    grid-area: aside2SP;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.aside3SP {
+    grid-area: aside3SP;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.aside4SP {
+    grid-area: aside4SP;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.aside5SP {
+    grid-area: aside5SP;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.l5 {
+    width: 250px;
+}
+
+.l3 {
+    width: 170px;
 }
