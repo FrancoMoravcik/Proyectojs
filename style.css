@@ -499,7 +499,7 @@ footer {
 }
 
 .cajaProduct {
-    height: 400px;
+    height: 450px;
     width: 250px;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.267);
     border-radius: 10px;
@@ -560,6 +560,7 @@ width: 200px;
 .box4SP {
     width: 100%;
     height: 70px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -567,7 +568,7 @@ width: 200px;
 }
 
 .boton1B1SP {
-    width: 150px;
+    width: 170px;
     color: white;
     background-color: #2c6e49;
     padding: 6px;
@@ -583,7 +584,7 @@ width: 200px;
 }
 
 .boton2B1SP {
-    width: 150px;
+    width: 170px;
     color: #2c6e49;
     background-color: white;
     border: 1px solid #2c6e49 !important;
@@ -600,44 +601,6 @@ width: 200px;
     color: white;
 }
 
-.h {
-    width: 100px;
-    color: white;
-    background-color: #2c6e49;
-    padding: 7px;
-    font-family: 'Montserrat', sans-serif;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: .5s;
-}
-
-.j{
-    width: 100%;
-    height: 70px;
-    display: flex;
-   flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.f {
-    width: 120px;
-    height: 25px;
-    color: white;
-    background-color: #2c6e49;
-    padding: 6px 0px 22px 0px;
-    font-family: 'Montserrat', sans-serif;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: .5s;
-}
-
-.f:hover {
-   background-color: #1c1c1c;
- 
-}
 
 .aside2SP {
     grid-area: aside2SP;
@@ -1000,11 +963,11 @@ margin: 20px 0px 20px 50px;
     font-weight: 400;
     background-color: #2c6e49be;
     cursor: pointer;
- 
+   
 }
 
 .botonS3Not:hover {
-    box-shadow: 1px 1px 5px 1px #1c1c1c3d;
+    box-shadow: 1px 1px 5px 1px #1c1c1c46;
 }
 
 .seccion3Not {
@@ -1056,3 +1019,52 @@ margin: 20px 0px 20px 50px;
 .h4D {
     margin-left: -7px;
 }
+
+/*productob*/
+.mnPb {
+    display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 600px 1280px;
+grid-template-areas: "seccion1Not asideNot"
+                     "seccion2Not seccion3Not";
+}
+
+.c2s3nPb {
+    margin-top: 500px;
+}
+
+/*productoc*/
+.mnPc{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 600px 760px;
+    grid-template-areas: "seccion1Not asideNot"
+                         "seccion2Not seccion3Not";
+}
+
+.p2nPc{
+    padding: 15px 40px 15px 0px;
+    font-size: 15px;
+}
+
+.imgnPc {
+    width: 470px;
+}
+
+.bajarbotonesPc{
+    margin-top: 40px;
+}
+
+/*productod*/
+.mnPd {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 600px 840px;
+    grid-template-areas: "seccion1Not asideNot"
+                         "seccion2Not seccion3Not";
+}
+
+.bajarbotonesPd{
+    margin-top: 60px;
+}
+
