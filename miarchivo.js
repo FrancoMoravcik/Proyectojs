@@ -1,3 +1,4 @@
+/*TRABAJO SIMULADOR INTERACTIVO*/
 /*
 let nombreIngresado = prompt("Ingrese su nombre");
 
@@ -28,6 +29,8 @@ for (let i = 1; i <= 2; i++) {
     }
     */
 
+
+    /*
     let nombre = prompt("Ingrese su nombre")
 while(nombre == ""){
     nombre = prompt("Porfavor ingrese su nombre")
@@ -93,3 +96,48 @@ switch (marca) {
                 marca = prompt("Que marca te gustaria comprar? las opciones que tenemos a dia de hoy son: Apple, Dell, Hp y Asus")
             } break;
     }
+    */
+
+
+
+
+
+
+    /*TRABAJO ARRAYS*/
+
+    class producto {
+        constructor(marca, memoriaRam, sistemaOperativo, precio){
+            this.marca = marca;
+            this.memoriaRam = memoriaRam;
+            this.sistemaOperativo = sistemaOperativo;
+            this.precio = precio;
+        }
+
+        sumarEnvio (envio){
+        this.precio = this.precio + envio;
+        }
+    }
+
+    const apple = new producto ("Apple", "16Gb", "Apple M1 8-Core CPU", 294999);
+    const dell = new producto ("Dell", "8Gb", "AMD Ryzen 7", 379142);
+    const lenovo = new producto ("Lenovo", "4Gb", "Intel Celeron", 71999);
+    const hp = new producto ("Hp", "8Gb", "Intel core i5", 264859);
+
+    const listaProductos = [apple, dell, lenovo, hp]
+    //console.log(listaProductos);
+
+    listaProductos.push(asus = new producto("Asus", "16Gb", "Intel Core i7", 199.225))
+    //console.log(listaProductos)
+
+   function sumarEnvioAlPrecio (array){
+    for(producto of array){
+        if(producto.marca === "Dell"){
+            producto.sumarEnvio(850)
+        }else if(producto.marca === "Hp"){
+            listaProductos.splice(3,1)
+        }
+    }
+   }
+
+   sumarEnvioAlPrecio(listaProductos)
+   console.log(listaProductos)
