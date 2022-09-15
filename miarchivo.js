@@ -104,8 +104,8 @@ switch (marca) {
 
 
     /*TRABAJO ARRAYS*/
-
-    class producto {
+/*
+  class producto { 
         constructor(marca, memoriaRam, sistemaOperativo, precio){
             this.marca = marca;
             this.memoriaRam = memoriaRam;
@@ -117,7 +117,8 @@ switch (marca) {
         this.precio = this.precio + envio;
         }
     }
-
+*/
+/*
     const apple = new producto ("Apple", "16Gb", "Apple M1 8-Core CPU", 294999);
     const dell = new producto ("Dell", "8Gb", "AMD Ryzen 7", 379142);
     const lenovo = new producto ("Lenovo", "4Gb", "Intel Celeron", 71999);
@@ -125,10 +126,11 @@ switch (marca) {
 
     const listaProductos = [apple, dell, lenovo, hp]
     //console.log(listaProductos);
-
-    listaProductos.push(asus = new producto("Asus", "16Gb", "Intel Core i7", 199.225))
-    //console.log(listaProductos)
-
+*//*
+    listaProductos.push(asus =/*EN ESTE CASO NO HACE FALTA EL (ASUS =)*//* new producto("Asus", "16Gb", "Intel Core i7", 199.225))*/
+    //console.log(listaProductos)*/
+    
+/*
    function sumarEnvioAlPrecio (array){
     for(producto of array){
         if(producto.marca === "Dell"){
@@ -141,3 +143,155 @@ switch (marca) {
 
    sumarEnvioAlPrecio(listaProductos)
    console.log(listaProductos)
+   */
+   
+
+   /*PRIMER ENTREGA PROYECTO FINAL*/
+class producto {
+    constructor (nombre, memoriaRam, procesador, precio){
+    this.nombre = nombre;
+    this.memoriaRam = memoriaRam;
+    this.procesador = procesador;
+    this.precio = precio;
+    }}
+ 
+    const apple = new producto ("Apple", "16Gb", "Apple M1 8-Core CPU", 294999);
+    const dell = new producto ("Dell", "8Gb", "AMD Ryzen 7", 379142);
+    const lenovo = new producto ("Lenovo", "4Gb", "Intel Celeron", 71999);
+    const hp = new producto ("Hp", "8Gb", "Intel core i5", 264859);
+    const asus = new producto ("Asus", "16Gb", "Intel Core i7", 199.225);
+  
+const arrayProductos = []
+
+function marcarOpcion (){
+    alert("Bienvenido")
+    let primerasOpciones = parseInt(prompt("Ingrese una opcion: \n 1)Ver productos \n 2)Salir"))
+    return primerasOpciones
+}
+
+
+function verProductos (){
+    let segundasOpciones = parseInt(prompt("Ingrese el numero para agregar al carrito: \n 1) Apple \n 2) Dell \n 3) Lenovo \n 4) Hp \n 5) Asus \n 6) Salir"))
+    return segundasOpciones
+}
+
+function compraRealizadaApple(){
+    alert("felicidades compraste una notebook APPLE" )
+}
+
+function compraRealizadaDell(){
+    alert("felicidades compraste una notebook DELL" )
+}
+
+function compraRealizadaLenovo(){
+    alert("felicidades compraste una notebook LENOVO" )
+}
+
+function compraRealizadaHp(){
+    alert("felicidades compraste una notebook Hp" )
+}
+
+function compraRealizadaAsus(){
+    alert("felicidades compraste una notebook ASUS" )
+}
+
+switch (marcarOpcion()) {
+    case 1 :
+      verProductos();
+      break;
+        case 2 : 
+        alert("Gracias por visitar nuestra pagina")
+        break;
+}
+
+let listaProductosParaElegir = verProductos()
+switch (listaProductosParaElegir) {
+    case 1 :
+        arrayProductos.push(apple)
+        console.log(arrayProductos)
+        let preguntaApple1 = prompt("Quieres ver el producto o ir a comprar? responder con (ver producto) (comprar)");{
+           if (preguntaApple1 == "ver producto") {
+           let preguntaApple2 = prompt("Elegiste una notebook Apple de 16GB de memoria RAM, Procesador M1 8-Core CPU con un precio de $294999 \n Quieres comprar? responder con si o con no");{
+                if(preguntaApple2 == "si"){
+                    compraRealizadaApple()
+                }else if(preguntaApple2 == "no"){
+                    alert("Gracias por visitar nuestra pagina")
+            }
+            }
+           }else if (preguntaApple1 == "comprar"){
+            compraRealizadaApple()
+           }
+        }
+        break;
+        case 2 :
+            arrayProductos.push(dell)
+            console.log(arrayProductos)
+         let preguntaDell1 = prompt("Quieres ver el producto o ir a comprar? responder con (ver producto) (comprar)");{
+           if (preguntaDell1 == "ver producto"){
+            let preguntaDell2 = prompt("Elegiste una notebook Dell de 8GB de memoria RAM, Procesador AMD Ryzen 7 con un precio de $379142 \n Quieres comprar? responder con si o con no");{
+                if (preguntaDell2 == "si"){
+                    compraRealizadaDell()
+                }else if (preguntaDell2 == "no"){
+                    alert("Gracias por visitar nuestra pagina")
+                }
+            }
+           }else if(preguntaDell1 == "comprar"){
+            compraRealizadaDell()
+           }
+        }
+        break;
+        case 3 :
+            arrayProductos.push(lenovo)
+            console.log(arrayProductos)
+            let preguntaLenovo1 = prompt("Quieres ver el producto o ir a comprar? responder con (ver producto) (comprar)");{
+                if (preguntaLenovo1 == "ver producto"){
+                 let preguntaLenovo2 = prompt("Elegiste una notebook Lenovo de 4GB de memoria RAM, Procesador Intel Celeron con un precio de $71999 \n Quieres comprar? responder con si o con no");{
+                     if (preguntaLenovo2 == "si"){
+                         compraRealizadaLenovo()
+                     }else if (preguntaLenovo2 == "no"){
+                         alert("Gracias por visitar nuestra pagina")
+                     }
+                 }
+                }else if(preguntaLenovo1 == "comprar"){
+                 compraRealizadaLenovo()
+                }
+             }
+        break;
+        case 4 :
+            arrayProductos.push(hp)
+            console.log(arrayProductos)
+            let preguntaHp1 = prompt("Quieres ver el producto o ir a comprar? responder con (ver producto) (comprar)");{
+                if (preguntaHp1 == "ver producto"){
+                 let preguntaHp2 = prompt("Elegiste una notebook HP de 8GB de memoria RAM, Procesador Intel core i5 con un precio de $264859 \n Quieres comprar? responder con si o con no");{
+                     if (preguntaHp2 == "si"){
+                         compraRealizadaHp()
+                     }else if (preguntaHp2 == "no"){
+                         alert("Gracias por visitar nuestra pagina")
+                     }
+                 }
+                }else if(preguntaHp1 == "comprar"){
+                 compraRealizadaHp()
+                }
+             }
+        break;
+        case 5 :
+            arrayProductos.push(asus)
+            console.log(arrayProductos)
+            let preguntaAsus1 = prompt("Quieres ver el producto o ir a comprar? responder con (ver producto) (comprar)");{
+                if (preguntaAsus1 == "ver producto"){
+                 let preguntaAsus2 = prompt("Elegiste una notebookaAsus de 16GB de memoria RAM, Procesador Intel Core i7 con un precio de $199.225 \n Quieres comprar? responder con si o con no");{
+                     if (preguntaAsus2 == "si"){
+                         compraRealizadaAsus()
+                     }else if (preguntaAsus2 == "no"){
+                         alert("Gracias por visitar nuestra pagina")
+                     }
+                 }
+                }else if(preguntaAsus1 == "comprar"){
+                 compraRealizadaAsus()
+                }
+             }
+        break;
+        case 6 : 
+        alert("Gracias por visitar nuestra pagina")
+        break;
+}
