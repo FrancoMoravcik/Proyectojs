@@ -147,6 +147,7 @@ switch (marca) {
    
 
    /*PRIMER ENTREGA PROYECTO FINAL*/
+   /*
 class producto {
     constructor (nombre, memoriaRam, procesador, precio){
     this.nombre = nombre;
@@ -295,3 +296,36 @@ switch (listaProductosParaElegir) {
         alert("Gracias por visitar nuestra pagina")
         break;
 }
+*/
+
+/*TRABAJO CON DOM*/
+const contenedor6Js = document.getElementById("contenedor6Js");
+
+class Producto {
+    constructor (imagen, nombre, precio) {
+        this.imagen = imagen;
+        this.nombre = nombre;
+        this.precio = precio;
+       
+    } 
+}
+
+const asus = new Producto("img/Asus5.webp" ,"Notebook Asus X515ea 15 Fhd Corei5 8gb", 199.225);
+const hp = new Producto("img/hp3.webp","Notebook Hp Probook 450 G8 i7 8gb", 448.127);
+const apple = new Producto("img/apple3.webp", "Notebook Macbook Pro M1", 799.999);
+
+const arrayProductos = [asus, hp, apple];
+
+arrayProductos.forEach(Producto => {
+    const cajaProducto = document.createElement("div");
+cajaProducto.className = "cajaProducto"
+    cajaProducto.innerHTML = `<a class="aB1SPJs">Hasta en 12 cuotas sin interes</a>
+    <img class="img4SPJs" src="${Producto.imagen}">
+    <h3 class="h3B3SPJs">${Producto.nombre}</h3>
+    <p class="pB3SP">$${Producto.precio}</p>
+    <a href="productoi.html"><button class="boton1B1SPJs">COMPRAR</button></a>
+    <button class="boton2B1SPJs">Añadir al carrito </button>`
+
+    contenedor6Js.appendChild(cajaProducto)
+
+})
