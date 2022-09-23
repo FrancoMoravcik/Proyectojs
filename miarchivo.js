@@ -299,7 +299,8 @@ switch (listaProductosParaElegir) {
 */
 
 /*TRABAJO CON DOM*/
-const contenedor6Js = document.getElementById("contenedor6Js");
+
+const seccion2Productos = document.getElementById("seccion2Productos");
 
 class Producto {
     constructor (imagen, nombre, precio) {
@@ -310,11 +311,23 @@ class Producto {
     } 
 }
 
-const asus = new Producto("img/Asus5.webp" ,"Notebook Asus X515ea 15 Fhd Corei5 8gb", 199.225);
-const hp = new Producto("img/hp3.webp","Notebook Hp Probook 450 G8 i7 8gb", 448.127);
-const apple = new Producto("img/apple3.webp", "Notebook Macbook Pro M1", 799.999);
+const asus1 = new Producto("img/Asus5.webp" ,"Notebook Asus X515ea 15 Fhd Corei5 8gb", 199.220);
+const hp1 = new Producto("img/hp3.webp","Notebook Hp Probook 450 G8 i7 8gb", 448.120);
+const apple1 = new Producto("img/apple3.webp", "Notebook Macbook Pro M1", 799.999);
+const apple3 = new Producto("img/apple2.jpg", "Notebook Macbook Air M1 Space Gray", 294.999);
+const lenovo3 = new Producto("img/lenovo6.webp" ,"Notebook Lenovo Legion 16 Q R7 32gb", 649.999);
+const apple2 = new Producto("img/apple1.jpg", "Notebook Macbook Air M1 Silver", 294.999);
+/**/const lenovo1 = new Producto("img/lenovo5.webp" ,"Notebook Lenovo 2 en 1 Ideapad D33010.1 Celeron", 71.999);
+/**/const asus2 = new Producto("img/asus1.webp", "Notebook Asus X515ea 15 Fhd Core i7 8gb", 232.880);
+/**/const hp2 = new Producto("img/hp4.webp " ,"Notebook Hp Victus 15.6 i5 8gb", 264.859);
+/**/const lenovo2 = new Producto("img/lenovo4.webp","Notebook Lenovo E14 Fhd i5 16gb", 385.150);
+/**/const asus3 = new Producto("img/asus6.webp","Notebook Asus Rog Zephyryus R9 16gb", 626.259);
+/**/const hp3= new Producto("img/hp2.webp", "Notebook Hp Celeron 4gb", 151.980);
+/**/const dell1 = new Producto("img/dell1.webp","Notebook Dell g15 Core i7 16GB", 379.140);
+/**/const dell2 = new Producto("img/dell2.webp", "Notebook Dell G15 Ryzen 7 16gb", 347.6999);
+//const samsung1 = new Producto("img/samsung1.webp","Notebook Samsung Galaxy Book Pro 360 2en 1", 269.999);
 
-const arrayProductos = [asus, hp, apple];
+const arrayProductos = [asus1, hp1, apple1, apple2, lenovo3, dell2];
 
 arrayProductos.forEach(Producto => {
     const cajaProducto = document.createElement("div");
@@ -326,6 +339,9 @@ cajaProducto.className = "cajaProducto"
     <a href="productoi.html"><button class="boton1B1SPJs">COMPRAR</button></a>
     <button class="boton2B1SPJs">Añadir al carrito </button>`
 
-    contenedor6Js.appendChild(cajaProducto)
+    seccion2Productos.appendChild(cajaProducto)
 
 })
+
+
+/*TRABAJO CON EVENTOS*/

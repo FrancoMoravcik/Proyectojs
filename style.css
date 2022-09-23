@@ -199,7 +199,6 @@ footer {
     display: flex;
     height: 250px;
     background-color: #1c1c1c;
-    margin-top: 530px;
 }
 
 .logoFooter {
@@ -409,12 +408,12 @@ footer {
 .mainProductos {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 2500px;
+    grid-template-rows: 2530px;
     grid-template-areas: "seccion1Productos seccion2Productos seccion2Productos seccion2Productos seccion2Productos";
 }
 
 .seccion1Productos {
-    height: 3030px;
+    height: 2530px;
     grid-area: seccion1Productos;
     display: flex;
     flex-direction: column;
@@ -479,22 +478,11 @@ footer {
 }
 
 .seccion2Productos {
-    height: 3000px;
+    height: 2530px;
     grid-area: seccion2Productos;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 500px 500px 500px 500px 500px 500px;
-    grid-template-areas: "aside1SP aside1SP aside1SP"
-                         "aside2SP aside2SP aside2SP"
-                         "aside3SP aside3SP aside3SP"
-                         "aside4SP aside4SP aside4SP"
-                         "aside5SP aside5SP aside5SP"
-                         "aside6SP aside6SP aside6SP";
-}
-
-.aside1SP {
-    grid-area: aside1SP;
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: space-around;
     align-items: center;
 }
@@ -603,40 +591,7 @@ width: 200px;
 }
 
 
-.aside2SP {
-    grid-area: aside2SP;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
-.aside3SP {
-    grid-area: aside3SP;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.aside4SP {
-    grid-area: aside4SP;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.aside5SP {
-    grid-area: aside5SP;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.aside6SP {
-    grid-area: aside6SP;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
 .l5 {
     width: 250px;
