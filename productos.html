@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
     <title>Productos</title>
 </head>
 <body>
@@ -23,7 +26,7 @@
             <input class="inputNavB" type="search" name="buscar" placeholder="Ingrese su busqueda...">
         </div>
         <div class="box3NavB">
-            <a href=""><img class="imgNavB" src="img/carrito.svg" alt=""></a>
+           <img class="imgNavB" src="img/carrito.svg" alt="">
         </div>
     </div>
     <div class="caja2NavB">
@@ -34,53 +37,19 @@
             </ul>
     </div>
 </nav>
+        
+  <div id="divProductos" class="divProductos"></div>
 
 
-<main class="mainProductos">
-<section class="seccion1Productos">
-<h2 class="H2S1P">CATEGORIAS</h2>
-<div class="cajaS1P">
-  <p class="pS1P">Marca</p>
-  <ul class="ulProductos">
-    <li class="liProductos"><a class="aProductos">Apple <span class="spanProd">(3)</span></a></li>
-    <li class="liProductos"><a class="aProductos">HP <span class="spanProd">(3)</span></a></li>
-    <li class="liProductos"><a class="aProductos">ASUS <span class="spanProd">(3)</span></a></li>
-    <li class="liProductos"><a class="aProductos">Lenovo <span class="spanProd">(3)</span></a></li>
-    <li class="liProductos"><a class="aProductos">SAMSUNG <span class="spanProd">(1)</span></a></li>
-    <li class="liProductos"><a class="aProductos">Dell <span class="spanProd">(2)</span></a></li>
-    </ul>
-  </div>
-  <div class="cajaS1P">
-  <p class="pS1P">Memoria RAM</p>
-    <ul class="ulProductos">
-    <li class="liProductos"><a class="aProductos">32 Gb <span class="spanProd">(1)</span></a></li>
-    <li class="liProductos"><a class="aProductos">16 Gb <span class="spanProd">(5)</span></a></li>
-    <li class="liProductos"><a class="aProductos">12 Gb <span class="spanProd">(0)</span></a></li>
-    <li class="liProductos"><a class="aProductos">8 Gb <span class="spanProd">(6)</span></a></li>
-    <li class="liProductos"><a class="aProductos">4 Gb <span class="spanProd">(4)</span></a></li>
-    </ul>
-  </div>
-  <div class="cajaS1P">
-    <p class="pS1P">Procesador</p>
-    <ul class="ulProductos">
-      <li class="liProductos"><a class="aProductos">Intel Core i3 <span class="spanProd">(0)</span></a></li>
-      <li class="liProductos"><a class="aProductos">Intel Core i5 <span class="spanProd">(3)</span></a></li>
-      <li class="liProductos"><a class="aProductos">Intel Core i7 <span class="spanProd">(4)</span></a></li>
-      <li class="liProductos"><a class="aProductos">Intel Core Pentium <span class="spanProd">(0)</span></a></li>
-      <li class="liProductos"><a class="aProductos">Apple M1 10-Core-CPU <span class="spanProd">(1)</span></a></li>
-      <li class="liProductos"><a class="aProductos">Apple M1 8-Core CPU <span class="spanProd">(2)</span></a></li>
-      <li class="liProductos"><a class="aProductos">Intel Celeron <span class="spanProd">(2)</span></a></li>
-      <li class="liProductos"><a class="aProductos">AMD Ryzen 7 <span class="spanProd">(2)</span></a></li>
-      <li class="liProductos"><a class="aProductos">AMD Ryzen 9 <span class="spanProd">(1)</span></a></li>               
-      </ul>
-  </div>
+  <button id="verProductosEnCarrito" class="btnsCarrito">Ver carrito</button>
+  <button id="vaciarCarrito" class="btnsCarrito">Vaciar carrito</button>
+ 
+  <section class="seccionCarritoDeCompras">
+    <button id="btnMontoCompra" class="btnCarrito">Ver monto de la Compra es de: <span class="spanCarrito">$</span><span class="spanCarrito" id="montoDeLaCompra">0</span></button>
+<div id="carritoDeCompras"></div>
 </section>
 
-  <section id="seccion2Productos" class="seccion2Productos"></section>
-
-     </main>
-
-
+<!--
     <footer>
 
       <div class="box1NavB logoFooter">
@@ -113,7 +82,10 @@
       <div class="cajaAviso">
          <p class="pAviso">Copyright 2022 ©Creado por Franco Moravcik</p>
         </div> 
+-->
 
-        <script src="miarchivo.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script src="miarchivo.js"></script>
 </body>
 </html>
