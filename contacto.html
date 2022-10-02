@@ -1,97 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>contacto</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+  <title>contacto</title>
 </head>
+
 <body>
-    <div class="cajaAviso">
-        <p class="pAviso">Cualquier consulta no dude en <a class="aAviso" href="contacto.html">contactarnos!</a></p>
+  <div class="cajaAviso">
+    <p class="pAviso">Cualquier consulta no dude en <a class="aAviso" href="contacto.html">contactarnos!</a></p>
+  </div>
+
+  <nav class="navB">
+    <div class="caja1NavB">
+      <div class="box1NavB">
+        <p class="pNavb">ARTEC <span class="spanNavB">Notebooks</span></p>
       </div>
+      <div class="box2NavB">
+        <a href=""><button class="buttonNavB">BUSCAR</button></a>
+        <input class="inputNavB" type="search" name="buscar" placeholder="Ingrese su busqueda...">
+      </div>
+      <div class="box3NavB">
+        <a href=""><img class="imgNavB" src="img/carrito.svg" alt=""></a>
+      </div>
+    </div>
+    <div class="caja2NavB">
+      <ul class="ulCaja2NB">
+        <li class="liCaja2NB"><a class="aCaja2NB" href="index.html">INICIO</a></li>
+        <li class="liCaja2NB"><a class="aCaja2NB" href="productos.html">PRODUCTOS</a></li>
+        <li class="liCaja2NB"><a class="aCaja2NB" href="contacto.html">CONTACTO</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="mainContacto">
+    <section class="seccionContacto">
+      <form class="formContacto" id="formContacto">
+
+        <div class="boxNombre">
+          <label class="labelContacto" for="nombre">NOMBRE</label>
+          <br>
+          <input class="inputContacto" type="text" name="nombre" id="nombreContacto">
+        </div>
+
+        <div class="boxApellido">
+          <label class="labelContacto" for="apellido">APELLIDO</label>
+          <br>
+          <input class="inputContacto" type="text" name="apellido" id="apellido">
+        </div>
+
+        <div class="boxMail">
+          <label class="labelContacto" for="mail">EMAIL</label>
+          <br>
+          <input class="inputContacto" type="email" name="mail" id="email">
+        </div>
+
+        <div class="boxNumero">
+          <label class="labelContacto" for="numero">TELEFONO</label>
+          <br>
+          <input class="inputContacto" type="text" name="numero" id="numero">
+        </div>
+
+        <div class="boxComentario">
+          <label class="labelContacto" for="comentario">ESCRIBE TU MENSAJE AQUI</label>
+          <br>
+          <textarea class="inputContacto textareaContacto" name="comentario" id="comentario"></textarea>
+        </div>
+
+        <div class="boxBoton">
+          <button id="botonContacto" class="botonContacto">ENVIAR</button>
+        </div>
+
+      </form>
+    </section>
+
+    <aside class="asideContacto">
       
-      <nav class="navB">
-        <div class="caja1NavB">
-            <div class="box1NavB">
-                <p class="pNavb">ARTEC <span class="spanNavB">Notebooks</span></p>
-            </div>
-            <div class="box2NavB">
-                <a href=""><button class="buttonNavB">BUSCAR</button></a>
-                <input class="inputNavB" type="search" name="buscar" placeholder="Ingrese su busqueda...">
-            </div>
-            <div class="box3NavB">
-                <a href=""><img class="imgNavB" src="img/carrito.svg" alt=""></a>
-            </div>
-        </div>
-        <div class="caja2NavB">
-            <ul class="ulCaja2NB">
-                <li class="liCaja2NB"><a class="aCaja2NB" href="index.html">INICIO</a></li>
-                <li class="liCaja2NB"><a class="aCaja2NB" href="productos.html">PRODUCTOS</a></li>
-                <li class="liCaja2NB"><a class="aCaja2NB" href="contacto.html">CONTACTO</a></li>
-                </ul>
-        </div>
-    </nav>
+      <br><br>
+      <button class="btnVerMensaje" id="VerMensaje">Ver Consulta</button>
+      <br><br>
+      <div id="contenedorFormulario"> </div>
+    </aside>
+  </main>
 
-        <main class="mainContacto">
-        <section class="seccionContacto">
-          <form class="formContacto" action="">
-
-            <div class="boxNombre">
-                 <label class="labelContacto" for="nombre">NOMBRE</label>
-                 <br>
-                 <input class="inputContacto" type="text" name="nombre" id="">
-            </div>
-
-            <div class="boxApellido">
-                <label class="labelContacto" for="apellido">APELLIDO</label>
-                <br>
-                <input class="inputContacto" type="text" name="apeliido" id="">
-            </div>
-
-            <div class="boxMail">
-                <label class="labelContacto" for="mail">EMAIL</label>
-                <br>
-                <input class="inputContacto" type="email" name="mail">
-            </div>
-
-            <div class="boxNumero">
-                <label class="labelContacto" for="numero">TELEFONO</label>
-                <br>
-                <input class="inputContacto" type="number" name="numero">
-            </div>
-
-            <div class="boxComentario">
-                <label class="labelContacto" for="comentario">ESCRIBE TU MENSAJE AQUI</label>
-                <br>
-                <textarea class="inputContacto textareaContacto" name="comentario" id=""></textarea>
-            </div>
-
-            <div class="boxBoton">
-                <button class="botonContacto">ENVIAR</button>
-            </div>
-
-          </form>
-        </section>
-
-        <aside class="asideContacto">
-           <h2 class="h2Contacto">Gracias por elegirnos!</h2>
-        </aside>
-</main>
-        
   <footer>
 
     <div class="box1NavB logoFooter">
       <p class="pNavb">ARTEC <span class="spanNavB sF">Notebooks</span></p>
-  </div>
+    </div>
 
     <div class="cajaIconos">
       <img class="iconosFooter wsp" src="img/wsppblanco.png" alt="">
       <img class="iconosFooter face" src="img/faceblanco.png" alt="">
       <img class="iconosFooter ig" src="img/igblanco.png" alt="">
     </div>
-   
+
     <div class="infoFooter">
       <div class="boxInfo">
         <img class="imgInfo mail" src="img/mailverde.png" alt="">
@@ -110,6 +118,9 @@
   </footer>
   <div class="cajaAviso">
     <p class="pAviso">Copyright 2022 ©Creado por Franco Moravcik</p>
-   </div>
+  </div>
+
+  <script src="miarchivo.js"></script>
 </body>
+
 </html>

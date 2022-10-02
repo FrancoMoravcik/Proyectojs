@@ -1070,7 +1070,6 @@ color: white;
 }
 
 .btnCarrito{
-    font-family: 'Montserrat', sans-serif;
     margin-left: 30px;
     margin-bottom: 30px;
     width: 350px;
@@ -1089,4 +1088,49 @@ color: white;
     padding: 5px;
     margin-bottom: -10px;
     color: white;
+}
+
+/*Mensaje en Contacto*/
+.btnVerMensaje {
+    background-color: #1c1c1cc4;
+    color: white;
+    margin-right: 20px;
+    padding: 12px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: all .5s;
+    font-size: 16px;
+}
+
+.btnVerMensaje:hover {
+    background-color: #2c6e49c0;
+}
+
+.pFormularioEnContacto{
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 30px;
+    margin-bottom: 5px;
+}
+
+.comentarioConsulta {
+    margin-bottom: 5px;
+}
+
+.btnConsulta{
+    background-color:#2c6e49;
+    color: white;
+    padding: 7px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: all .5s;
+    font-size: 12px;
+    margin-left: 30px;  
+      margin-bottom: 15px;
+}
+
+.btnConsulta:hover{
+  background-color: #1c1c1c;
 }

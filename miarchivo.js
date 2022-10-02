@@ -298,66 +298,16 @@ switch (listaProductosParaElegir) {
 }
 */
 
-/*TRABAJO CON DOM*/
-/*
-const seccion2Productos = document.getElementById("seccion2Productos");
-
-class Producto {
-    constructor (id, imagen, nombre, precio, clase) {
-        this.id = id;
-        this.imagen = imagen;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.clase = clase;
-    } 
-}
-
-const asus1 = new Producto(1, "img/Asus5.webp" ,"Notebook Asus X515ea 15 Fhd Corei5 8gb", 199.220,"imgJs1");
-const hp1 = new Producto(2, "img/hp3.webp","Notebook Hp Probook 450 G8 i7 8gb", 448.120,"imgJs2");
-const apple1 = new Producto(3, "img/apple3.webp", "Notebook Macbook Pro M1", 799.999,"imgJs3");
-const apple3 = new Producto(4, "img/apple2.jpg", "Notebook Macbook Air M1 Space Gray", 294.999,"imgJs4");
-const lenovo3 = new Producto(5, "img/lenovo6.webp" ,"Notebook Lenovo Legion 16 Q R7 32gb", 649.999,"imgJs5");
-const apple2 = new Producto(6, "img/apple1.jpg", "Notebook Macbook Air M1 Silver", 294.999,"imgJs6");
-const lenovo1 = new Producto(7, "img/lenovo5.webp" ,"Notebook Lenovo 2 en 1 Ideapad D33010.1 Celeron", 71.999,"imgJs7");
-const asus2 = new Producto(8, "img/asus1.webp", "Notebook Asus X515ea 15 Fhd Core i7 8gb", 232.880,"imgJs8");
-const hp2 = new Producto(9, "img/hp4.webp " ,"Notebook Hp Victus 15.6 i5 8gb", 264.859,"imgJs9");
-const lenovo2 = new Producto(10, "img/lenovo4.webp","Notebook Lenovo E14 Fhd i5 16gb", 385.150,"imgJs10");
-const asus3 = new Producto(11, "img/asus6.webp","Notebook Asus Rog Zephyryus R9 16gb", 626.259,"imgJs11");
-const hp3 = new Producto(12, "img/hp2.webp", "Notebook Hp Celeron 4gb", 151.980,"imgJs12");
-const dell1 = new Producto(13, "img/dell1.webp","Notebook Dell g15 Core i7 16GB", 379.140,"imgJs13");
-const samsung1 = new Producto(14
-    
-    , "img/samsung1.webp","Notebook Samsung Galaxy Book Pro 360 2en 1", 269.999, "imgJs15");
-const dell2 = new Producto(15,  "img/dell2.webp", "Notebook Dell G15 Ryzen 7 16gb", 347.6999,"imgJs14");
-const arrayProductos = [asus1, hp1, apple1, apple3, lenovo3, apple2, lenovo1, asus2, hp2, lenovo2, asus3, hp3, dell1, samsung1, dell2];
-
-console.log(arrayProductos)
-
-arrayProductos.forEach(Producto => {
-    const cajaProducto = document.createElement("div");
-cajaProducto.className = "cajaProducto"
-    cajaProducto.innerHTML = `<a class="aB1SPJs">Hasta en 12 cuotas sin interes</a>
-    <img class="${Producto.clase}" src="${Producto.imagen}">
-    <h3 class="h3B3SPJs">${Producto.nombre}</h3>
-    <p class="pB3SP">$${Producto.precio}</p>
-    <a href="productoi.html"><button class="boton1B1SPJs">COMPRAR</button></a>
-    <button class="boton2B1SPJs">Añadir al carrito </button>`
-
-    seccion2Productos.appendChild(cajaProducto)
-
-})
-*/
 /*TRABAJO CON EVENTOS*/
 
+
+
 /*EVENTOS CON EL FORMULARIO*/
-/*
-
-
-
+/*2Da entrega proyecto final*/
 
 class Formulario {
-    constructor(nombre, apellido, email, numero, comentario) {
-        this.nombre = nombre;
+    constructor(nombreContacto, apellido, email, numero, comentario) {
+        this.nombreContacto = nombreContacto;
         this.apellido = apellido;
         this.email = email;
         this.numero = numero;
@@ -367,9 +317,6 @@ class Formulario {
 
 const formularios = [];
 
-
-//Si el LocalStorage tiene datos. los agrego al Array de Formularios
-
 if(localStorage.getItem("formularios")) {
     let formular = JSON.parse(localStorage.getItem("formularios"));
     for(let i = 0; i < formular.length; i++){
@@ -377,24 +324,27 @@ if(localStorage.getItem("formularios")) {
     }
 }
 
-
 const form = document.getElementById("formContacto");
 
-form.addEventListener("submit", (e) => {
+if(form){
+    form.addEventListener("submit", (e) => {
     e.preventDefault();
     agregarFormulario();
 })
+}
+
+
 
 function agregarFormulario() {
-    const nombre = document.getElementById("nombre").value
+    const nombreContacto = document.getElementById("nombreContacto").value
     const apellido = document.getElementById("apellido").value
     const email = document.getElementById("email").value
     const numero = document.getElementById("numero").value
     const comentario = document.getElementById("comentario").value
 
-    const nuevoFormulario = new Formulario(nombre, apellido, email, numero, comentario)
+    const nuevoFormulario = new Formulario(nombreContacto, apellido, email, numero, comentario);
+
     formularios.push(nuevoFormulario);
-    //Agrego el LocalStorage
     localStorage.setItem("formularios", JSON.stringify(formularios));
     form.reset();
 }
@@ -403,31 +353,46 @@ const contenedorFormulario = document.getElementById("contenedorFormulario");
 
 const VerMensaje = document.getElementById("VerMensaje");
 
+if(VerMensaje){
+    
 VerMensaje.addEventListener("click", () => {
     mostrarFormulario();
 });
+}
+
 
 function mostrarFormulario() {
     contenedorFormulario.innerHTML = ""
     formularios.forEach(formulario => {
         const div = document.createElement("div");
         div.innerHTML = ` 
-             <div>
-             <p>Nombre: ${formulario.nombre} </p>
-             <p>Apellido: ${formulario.apellido} </p>
-             <p>Email: ${formulario.email} </p>
-             <p>Numero: ${formulario.numero} </p>
-             <p>Comentario: ${formulario.comentario} </p>
+             <div class="cajaMensajeDelFormulario">
+             <p class="pFormularioEnContacto">Nombre: ${formulario.nombreContacto} </p>
+             <p class="pFormularioEnContacto">Apellido: ${formulario.apellido} </p>
+             <p class="pFormularioEnContacto">Email: ${formulario.email} </p>
+             <p class="pFormularioEnContacto">Numero: ${formulario.numero} </p>
+             <p class="pFormularioEnContacto comentarioConsulta">Comentario: ${formulario.comentario} </p>
+             <button class="btnConsulta" id="btnConsulta">Elimnar Consulta</button>
              </div>                 
         `
 
         contenedorFormulario.appendChild(div)
     })
+
+    const btnConsulta = document.getElementById("btnConsulta");
+
+    btnConsulta.addEventListener("click", () => {
+        eliminarConsulta()
+    })
+
+    function eliminarConsulta() {
+      contenedorFormulario.remove()
+      localStorage.clear()
+    }
 }
 
-*/
 
-/*2Da entrega proyecto final*/
+/*DOM Y EVENTOS EN PRODUCTOS*/
 
 
 class Producto {
