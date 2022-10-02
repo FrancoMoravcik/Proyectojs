@@ -387,7 +387,7 @@ function mostrarFormulario() {
 
     function eliminarConsulta() {
       contenedorFormulario.remove()
-      localStorage.clear()
+      localStorage.clear( )
     }
 }
 
