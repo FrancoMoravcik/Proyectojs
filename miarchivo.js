@@ -333,8 +333,6 @@ if(form){
 })
 }
 
-
-
 function agregarFormulario() {
     const nombreContacto = document.getElementById("nombreContacto").value
     const apellido = document.getElementById("apellido").value
@@ -344,6 +342,9 @@ function agregarFormulario() {
 
     const nuevoFormulario = new Formulario(nombreContacto, apellido, email, numero, comentario);
 
+    /*OPERADOR TERNARIO*/ 
+    nuevoFormulario === "" ? alert("Completa todos los datos") : alert("Gracias por comunicarte con nosotros")
+     
     formularios.push(nuevoFormulario);
     localStorage.setItem("formularios", JSON.stringify(formularios));
     form.reset();
@@ -354,12 +355,10 @@ const contenedorFormulario = document.getElementById("contenedorFormulario");
 const VerMensaje = document.getElementById("VerMensaje");
 
 if(VerMensaje){
-    
-VerMensaje.addEventListener("click", () => {
+    VerMensaje.addEventListener("click", () => {
     mostrarFormulario();
 });
 }
-
 
 function mostrarFormulario() {
     contenedorFormulario.innerHTML = ""
