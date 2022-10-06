@@ -305,94 +305,7 @@ switch (listaProductosParaElegir) {
 /*EVENTOS CON EL FORMULARIO*/
 /*2Da entrega proyecto final*/
 
-class Formulario {
-    constructor(nombreContacto, apellido, email, numero, comentario) {
-        this.nombreContacto = nombreContacto;
-        this.apellido = apellido;
-        this.email = email;
-        this.numero = numero;
-        this.comentario = comentario;
-    }
-}
-
-const formularios = [];
-
-if(localStorage.getItem("formularios")) {
-    let formular = JSON.parse(localStorage.getItem("formularios"));
-    for(let i = 0; i < formular.length; i++){
-        formularios.push(formular[i]);
-    }
-}
-
-const form = document.getElementById("formContacto");
-
-if(form){
-    form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    agregarFormulario();
-})
-}
-
-function agregarFormulario() {
-    const nombreContacto = document.getElementById("nombreContacto").value
-    const apellido = document.getElementById("apellido").value
-    const email = document.getElementById("email").value
-    const numero = document.getElementById("numero").value
-    const comentario = document.getElementById("comentario").value
-
-    const nuevoFormulario = new Formulario(nombreContacto, apellido, email, numero, comentario);
-
-    /*OPERADOR TERNARIO*/ 
-    nuevoFormulario === "" ? alert("Completa todos los datos") : alert("Gracias por comunicarte con nosotros")
-     
-    formularios.push(nuevoFormulario);
-    localStorage.setItem("formularios", JSON.stringify(formularios));
-    form.reset();
-}
-
-const contenedorFormulario = document.getElementById("contenedorFormulario");
-
-const VerMensaje = document.getElementById("VerMensaje");
-
-if(VerMensaje){
-    VerMensaje.addEventListener("click", () => {
-    mostrarFormulario();
-});
-}
-
-function mostrarFormulario() {
-    contenedorFormulario.innerHTML = ""
-    formularios.forEach(formulario => {
-        const div = document.createElement("div");
-        div.innerHTML = ` 
-             <div class="cajaMensajeDelFormulario">
-             <p class="pFormularioEnContacto">Nombre: ${formulario.nombreContacto} </p>
-             <p class="pFormularioEnContacto">Apellido: ${formulario.apellido} </p>
-             <p class="pFormularioEnContacto">Email: ${formulario.email} </p>
-             <p class="pFormularioEnContacto">Numero: ${formulario.numero} </p>
-             <p class="pFormularioEnContacto comentarioConsulta">Comentario: ${formulario.comentario} </p>
-             <button class="btnConsulta" id="btnConsulta">Elimnar Consulta</button>
-             </div>                 
-        `
-
-        contenedorFormulario.appendChild(div)
-    })
-
-    const btnConsulta = document.getElementById("btnConsulta");
-
-    btnConsulta.addEventListener("click", () => {
-        eliminarConsulta()
-    })
-
-    function eliminarConsulta() {
-      contenedorFormulario.remove()
-      localStorage.clear( )
-    }
-}
-
-
 /*DOM Y EVENTOS EN PRODUCTOS*/
-
 
 class Producto {
     constructor(id, imagen, nombre, precio, clase, cantidad) {
@@ -418,7 +331,6 @@ const arrayProductos = [asus1, hp1, apple1, lenovo3, asus3, hp3, samsung1, dell2
 
 const divProductos = document.getElementById("divProductos");
 
-
 arrayProductos.forEach(producto => {
     const cajaProducto = document.createElement("div");
     cajaProducto.className = "cajaProducto";
@@ -436,6 +348,15 @@ arrayProductos.forEach(producto => {
 
     btn.addEventListener("click", () => {
         añadirAlCarrito(producto.id)
+        Toastify({
+            text: "Añadiste un producto al carrito",
+            gravity: "bottom",
+            duration: 1500,
+            close: true,
+            style: {
+                background: "linear-gradient(to right, #2c6e49, #4ab679)"
+            }
+        }).showToast();
     })
 })
 
@@ -444,13 +365,13 @@ const carrito = [];
 const añadirAlCarrito = (id) => {
     const producto = arrayProductos.find(producto => producto.id === id)
     const productoEnElCarito = carrito.find(producto => producto.id === id)
-    if(productoEnElCarito){
+    if (productoEnElCarito) {
         productoEnElCarito.cantidad++;
-    }else{
+    } else {
         carrito.push(producto)
     }
-    }
-    //console.log(carrito)
+}
+//console.log(carrito)
 
 const carritoDeCompras = document.getElementById("carritoDeCompras");
 const verProductosEnCarrito = document.getElementById("verProductosEnCarrito");
@@ -470,7 +391,7 @@ function actualizarCarrito() {
         <p class="pB3SP">$${producto.precio}</p>
         </div>
         
-        <button onClick = "eliminarDelCarrito(${producto.id})" class="boton2B1SPJs btnEliminarDC">Eliminar del Carrito </button>  
+        <button id="btnEliminarDelCarrito" onClick = "eliminarDelCarrito(${producto.id})" class="boton2B1SPJs btnEliminarDC">Eliminar del Carrito </button>  
         </div>
           
         `
@@ -479,11 +400,23 @@ function actualizarCarrito() {
     carritoDeCompras.innerHTML = aux;
 }
 
+function toastifyBoton(){
+    Toastify({
+        text: "Eliminaste un producto del carrito",
+        gravity: "bottom",
+        duration: 1500,
+        close: true,
+        style: {
+            background: "linear-gradient(to right, #2c6e49, #4ab679)"
+        }
+    }).showToast();
+}
+
 const eliminarDelCarrito = (id) => {
     const producto = carrito.find(producto => producto.id === id);
-    carrito.splice(carrito.indexOf(producto),1);
+    carrito.splice(carrito.indexOf(producto), 1);
     actualizarCarrito();
-
+    toastifyBoton();
 }
 
 const montoDeLaCompra = document.getElementById("montoDeLaCompra")
@@ -492,17 +425,37 @@ const btnMontoCompra = document.getElementById("btnMontoCompra")
 
 btnMontoCompra.addEventListener("click", verMonto)
 
-function verMonto () {
-    let monto =0;
+function verMonto() {
+    let monto = 0;
     carrito.forEach(producto => {
-monto += producto.precio * producto.cantidad;
+        monto += producto.precio * producto.cantidad;
     })
     montoDeLaCompra.innerHTML = monto
 }
 
 const vaciarCarrito = document.getElementById("vaciarCarrito")
+
+if(vaciarCarrito)
 vaciarCarrito.addEventListener("click", () => {
-    console.log("click")
-    carrito.splice(0, carrito.length);
+    Swal.fire({
+        title: "Seguro que quieres vaciar el carrito?",
+        icon: "warning",
+        confirmButtonText: "Aceptar",
+        showCancelButton: true,
+        showCancelText: "Cancelar",
+        showCancelColor: "#2c6e49"
+    }).then((resultado) => {
+        if(resultado.isConfirmed){
+            carrito.splice(0, carrito.length);
     actualizarCarrito();
+    Swal.fire({
+        title: "Ya no tienes productos en el carrito",
+        icon: "succes",
+        confirmButtonText: "Aceptar",
+    })
+        }
+
+    })
+    
 }) 
+

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <title>contacto</title>
 </head>
 
@@ -45,31 +45,31 @@
         <div class="boxNombre">
           <label class="labelContacto" for="nombre">NOMBRE</label>
           <br>
-          <input class="inputContacto" type="text" name="nombre" id="nombreContacto">
+          <input class="inputContacto" type="text" name="nombre" id="nombreContacto" required>
         </div>
 
         <div class="boxApellido">
           <label class="labelContacto" for="apellido">APELLIDO</label>
           <br>
-          <input class="inputContacto" type="text" name="apellido" id="apellido">
+          <input class="inputContacto" type="text" name="apellido" id="apellido" required>
         </div>
 
         <div class="boxMail">
           <label class="labelContacto" for="mail">EMAIL</label>
           <br>
-          <input class="inputContacto" type="email" name="mail" id="email">
+          <input class="inputContacto" type="email" name="mail" id="email" required>
         </div>
 
         <div class="boxNumero">
           <label class="labelContacto" for="numero">TELEFONO</label>
           <br>
-          <input class="inputContacto" type="text" name="numero" id="numero">
+          <input class="inputContacto" type="text" name="numero" id="numero" required>
         </div>
 
         <div class="boxComentario">
           <label class="labelContacto" for="comentario">ESCRIBE TU MENSAJE AQUI</label>
           <br>
-          <textarea class="inputContacto textareaContacto" name="comentario" id="comentario"></textarea>
+          <textarea class="inputContacto textareaContacto" name="comentario" id="comentario" required></textarea>
         </div>
 
         <div class="boxBoton">
@@ -82,7 +82,7 @@
     <aside class="asideContacto">
       
       <br><br>
-      <button class="btnVerMensaje" id="VerMensaje">Ver Consulta</button>
+      <button class="btnVerMensaje" id="verMensaje">Ver Consulta</button>
       <br><br>
       <div id="contenedorFormulario"> </div>
     </aside>
@@ -120,7 +120,9 @@
     <p class="pAviso">Copyright 2022 ©Creado por Franco Moravcik</p>
   </div>
 
-  <script src="miarchivo.js"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="formulario.js"></script>
 </body>
 
 </html>
