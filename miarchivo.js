@@ -298,11 +298,6 @@ switch (listaProductosParaElegir) {
 }
 */
 
-/*TRABAJO CON EVENTOS*/
-
-
-
-/*EVENTOS CON EL FORMULARIO*/
 /*2Da entrega proyecto final*/
 
 /*DOM Y EVENTOS EN PRODUCTOS*/

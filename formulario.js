@@ -70,12 +70,12 @@ function mostrarConsultas() {
         const divConsulta = document.createElement("div");
         divConsulta.innerHTML = `
       
-      <p>Nombre: ${consulta.nombreContacto}</p>
-      <p>Apellido: ${consulta.apellido}</p>
-      <p>Email: ${consulta.email}</p>
-      <p>Numero: ${consulta.numero}</p>
-      <p>Consulta: ${consulta.comentario}</p>
-      <button id="btnEliminarConsulta">Eliminar consulta</button
+      <p class="pFormularioEnContacto">Nombre: ${consulta.nombreContacto}</p>
+      <p class="pFormularioEnContacto">Apellido : ${consulta.apellido}</p>
+      <p class="pFormularioEnContacto">Email : ${consulta.email}</p>
+      <p class="pFormularioEnContacto">Numero  ${consulta.numero}</p>
+      <p class="pFormularioEnContacto">Consulta : ${consulta.comentario}</p>
+      <button class="btnVerMensaje" id="btnEliminarConsulta">Eliminar consulta</button
  
       ` ;
       contenedorFormulario.appendChild(divConsulta);
