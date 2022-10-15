@@ -622,13 +622,6 @@ border-radius: 5px;
     font-size: 17px;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-    }
-input[type=number] { -moz-appearance:textfield; }
-
 .box1Aside2 {
     display: flex;
     justify-content: end;

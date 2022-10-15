@@ -1,4 +1,3 @@
-
 class Consulta {
     constructor(nombreContacto, apellido, email, numero, comentario) {
         this.nombreContacto = nombreContacto;
@@ -12,11 +11,35 @@ class Consulta {
 
 const consultas = [];
 
+if(localStorage.getItem("consultas")){
+    let consulta = JSON.parse(localStorage.getItem("consultas"))
+    for(let i = 0; i < consulta.length; i++){
+        consultas.push(consulta[i])
+    }
+}
+
 const form = document.getElementById("formContacto")
+
+botonContacto = document.getElementById("botonContacto")
+botonContacto.addEventListener("click", () =>{
+Toastify({
+    text: "Ya enviaste tu consulta",
+    duration: 2000,
+    gravity:"bottom",
+    close: true,
+    style:{
+        background: "linear-gradient(to right, #2c6e49, #4ab679)",
+    },
+}).showToast();
+})
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-      const nombreContacto = document.getElementById("nombreContacto").value;
+    agregarConsulta();
+})
+
+function agregarConsulta() {
+    const nombreContacto = document.getElementById("nombreContacto").value;
     const apellido = document.getElementById("apellido").value;
     const email = document.getElementById("email").value;
     const numero = document.getElementById("numero").value;
@@ -24,29 +47,46 @@ form.addEventListener("submit", (e) => {
 
     const consultaNueva = new Consulta(nombreContacto, apellido, email, numero, comentario)
     consultas.push(consultaNueva);
+
+    localStorage.setItem("consultas", JSON.stringify(consultas));
     form.reset();
 }
-)
 
 const contenedorFormulario = document.getElementById("contenedorFormulario");
 const verMensaje = document.getElementById("verMensaje");
 
 verMensaje.addEventListener("click", () => {
     mostrarConsultas();
+    
 })
+
+
 
 function mostrarConsultas() {
     contenedorFormulario.innerHTML = "";
     consultas.forEach(consulta => {
         const divConsulta = document.createElement("div");
         divConsulta.innerHTML = `
+      
       <p class="pFormularioEnContacto">Nombre: ${consulta.nombreContacto}</p>
       <p class="pFormularioEnContacto">Apellido : ${consulta.apellido}</p>
       <p class="pFormularioEnContacto">Email : ${consulta.email}</p>
       <p class="pFormularioEnContacto">Numero  ${consulta.numero}</p>
-      <p class="pFormularioEnContacto">Consulta : ${consulta.comentario}</p> 
+      <p class="pFormularioEnContacto">Consulta : ${consulta.comentario}</p>
+      <button class="btnVerMensaje" id="btnEliminarConsulta">Eliminar consulta</button
+ 
       ` ;
       contenedorFormulario.appendChild(divConsulta);
     })
-}
+const btnEliminarConsulta = document.getElementById("btnEliminarConsulta")
 
+if(btnEliminarConsulta)
+btnEliminarConsulta.addEventListener("click", () => {
+    eliminarConsulta()
+})
+
+function eliminarConsulta(){
+    contenedorFormulario.remove()
+    localStorage.clear()
+}
+}
