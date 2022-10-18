@@ -1,12 +1,13 @@
 [
+ 
     {"id": "1", "imagen":"img/Asus5.webp", "nombre": "Notebook Asus X515ea 15 Fhd Corei5 8gb", "precio": "198000", "clase": "imgJs1", "cantidad": "1"},
-    
+
     {"id": "2", "imagen":"img/hp3.webp", "nombre": "Notebook Hp Probook 450 G8 i7 8gb", "precio": "448000", "clase": "imgJs2", "cantidad": "1"},
-   
+
     {"id": "3", "imagen":"img/apple3.webp", "nombre": "Notebook Macbook Pro M1", "precio": "790000", "clase": "imgJs3", "cantidad": "1"},
-   
+
     {"id": "4", "imagen":"img/lenovo6.webp", "nombre": "Notebook Lenovo Legion 16 Q R7 32gb", "precio": "650000", "clase": "imgJs4", "cantidad": "1"},
-  
+
     {"id": "5", "imagen":"img/asus6.webp", "nombre": "Notebook Asus Rog Zephyryus R9 16gb", "precio": "626000", "clase": "imgJs5", "cantidad": "1"},
 
     {"id": "6", "imagen":"img/hp2.webp", "nombre": "Notebook Hp Celeron 4gb", "precio": "151000", "clase": "imgJs6", "cantidad": "1"},
@@ -15,5 +16,6 @@
 
 
     {"id": "7", "imagen":"img/samsung1.webp", "nombre": "Notebook Samsung Galaxy Book Pro 360 2en 1", "precio": "270000", "clase": "imgJs8", "cantidad": "1"}
+
 
 ]

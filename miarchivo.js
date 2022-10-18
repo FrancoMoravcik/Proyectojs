@@ -12,40 +12,40 @@ class Producto {
     }
 }
 */
+/*
+const asus1 = new Producto(1, "img/Asus5.webp", "Notebook Asus X515ea 15 Fhd Corei5 8gb", 198000, "imgJs1", 1);
+const hp1 = new Producto(2, "img/hp3.webp", "Notebook Hp Probook 450 G8 i7 8gb", 448000, "imgJs2", 1);
+const apple1 = new Producto(3, "img/apple3.webp", "Notebook Macbook Pro M1", 790000, "imgJs3", 1);
+const lenovo3 = new Producto(4, "img/lenovo6.webp", "Notebook Lenovo Legion 16 Q R7 32gb", 650000, "imgJs4", 1);
+const asus3 = new Producto(5, "img/asus6.webp", "Notebook Asus Rog Zephyryus R9 16gb", 626000, "imgJs5", 1);
+const hp3 = new Producto(6, "img/hp2.webp", "Notebook Hp Celeron 4gb", 151000, "imgJs6", 1);
+const dell2 = new Producto(8, "img/dell2.webp", "Notebook Dell G15 Ryzen 7 16gb", 347000, "imgJs7", 1);
+const samsung1 = new Producto(7, "img/samsung1.webp", "Notebook Samsung Galaxy Book Pro 360 2en 1", 270000, "imgJs8", 1);
 
-//const asus1 = new Producto(1, "img/Asus5.webp", "Notebook Asus X515ea 15 Fhd Corei5 8gb", 198000, "imgJs1", 1);
-//const hp1 = new Producto(2, "img/hp3.webp", "Notebook Hp Probook 450 G8 i7 8gb", 448000, "imgJs2", 1);
-//const apple1 = new Producto(3, "img/apple3.webp", "Notebook Macbook Pro M1", 790000, "imgJs3", 1);
-//const lenovo3 = new Producto(4, "img/lenovo6.webp", "Notebook Lenovo Legion 16 Q R7 32gb", 650000, "imgJs4", 1);
-//const asus3 = new Producto(5, "img/asus6.webp", "Notebook Asus Rog Zephyryus R9 16gb", 626000, "imgJs5", 1);
-//const hp3 = new Producto(6, "img/hp2.webp", "Notebook Hp Celeron 4gb", 151000, "imgJs6", 1);
-//const dell2 = new Producto(8, "img/dell2.webp", "Notebook Dell G15 Ryzen 7 16gb", 347000, "imgJs7", 1);
-//const samsung1 = new Producto(7, "img/samsung1.webp", "Notebook Samsung Galaxy Book Pro 360 2en 1", 270000, "imgJs8", 1);
-
-//const arrayProductos = [asus1, hp1, apple1, lenovo3, asus3, hp3, samsung1, dell2];
+const arrayProductos = [asus1, hp1, apple1, lenovo3, asus3, hp3, samsung1, dell2];
+*/
 
 const divProductos = document.getElementById("divProductos");
-const listaProductos = "json/archivo.json"
+const productosEnJson = "json/archivo.json"
+let productosFetch
 
-fetch(listaProductos)
+fetch(productosEnJson)
 .then(respuesta => respuesta.json())
 .then(datos => {
-    datos.forEach(producto => {
-    divProductos.innerHTML += `
-    <div class="cajaProducto">
-    <a class="aB1SPJs">Hasta en 12 cuotas sin interes</a>
+datos.forEach(producto => {
+    productosFetch= datos.slice(0)
+    const cajaProducto = document.createElement("div");
+    cajaProducto.className = "cajaProducto";
+    cajaProducto.innerHTML = `<a class="aB1SPJs">Hasta en 12 cuotas sin interes</a>
     <img class="${producto.clase}" src="${producto.imagen}">
     <h3 class="h3B3SPJs fs-5">${producto.nombre}</h3>
     <p class="pB3SP">$${producto.precio}</p>
     <a href="productoi.html"><button class="boton1B1SPJs">COMPRAR</button></a>
-    <button id="btn ${producto.id}" class="boton2B1SPJs">Añadir al carrito </button>
-    </div>
-    `;
-
-    const btn = document.getElementById(`btn ${producto.id}`)
-
-    btn.addEventListener("click", () => { 
-        añadirAlCarrito(producto.id)
+    <button id="btn ${producto.id}" class="boton2B1SPJs">Añadir al carrito </button>`;
+    divProductos.appendChild(cajaProducto);
+     const btn = document.getElementById(`btn ${producto.id}`)
+    btn.addEventListener("click", () => {
+        aniadirAlCarrito(producto.id)
         Toastify({
             text: "Añadiste un producto al carrito",
             gravity: "bottom",
@@ -56,13 +56,13 @@ fetch(listaProductos)
             }
         }).showToast();
     })
+}) 
 })
-})
-.catch(error => console.log(error))
+
 
 const carrito = [];
-const añadirAlCarrito = (id) => {
-    const producto = datos.find(producto => producto.id === id)
+const aniadirAlCarrito = (id) => {
+    const producto = productosFetch.find(producto => producto.id === id)
     const productoEnElCarito = carrito.find(producto => producto.id === id)
     if (productoEnElCarito) {
         productoEnElCarito.cantidad++;
@@ -157,5 +157,3 @@ vaciarCarrito.addEventListener("click", () => {
     })
     
 }) 
-
-

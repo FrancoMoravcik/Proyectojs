@@ -929,6 +929,10 @@ grid-template-areas: "seccion1Not asideNot"
     margin-top: 7px;
 }
 
+.aB1SPJs:hover {
+    color: white;
+}
+
 .imgJs1 {
     width: 200px;
 }
