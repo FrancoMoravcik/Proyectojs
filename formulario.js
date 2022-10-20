@@ -90,3 +90,4 @@ function eliminarConsulta(){
     localStorage.clear()
 }
 }
+
