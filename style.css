@@ -49,12 +49,14 @@ width: 100%;
 display: flex;
 }
 
+
 .box1NavB {
-    width: 33%;
+    width: 50%;
     display: flex;
     justify-content: start;
    align-items: center;
 }
+
 
 .pNavb {
     font-size: 40px;
@@ -71,12 +73,14 @@ display: flex;
     letter-spacing: 2px;
 }
 
+/*
 .box2NavB {
 width: 33%;
 display: flex;
 align-items: center;
 justify-content: center;
 }
+
 
 .buttonNavB {
     height: 35px;
@@ -95,9 +99,10 @@ justify-content: center;
     padding-left: 10px;
     font-family: 'Montserrat', sans-serif;
 }
+*/
 
 .box3NavB {
-    width: 33%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: end;
@@ -107,6 +112,12 @@ justify-content: center;
     width: 30px;
    margin-right: 20px;
  }   
+
+ .botonCarrito {
+    background-color: white;
+    border: none;
+    
+ }
 
  .btnVerCarrito {
     display: flex;

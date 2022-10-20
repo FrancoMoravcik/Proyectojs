@@ -40,9 +40,11 @@ datos.forEach(producto => {
     <img class="${producto.clase}" src="${producto.imagen}">
     <h3 class="h3B3SPJs fs-5">${producto.nombre}</h3>
     <p class="pB3SP">$${producto.precio}</p>
-    <a href="productoi.html"><button class="boton1B1SPJs">COMPRAR</button></a>
+    <button id="btnCompra ${producto.id}" class="boton1B1SPJs">COMPRAR</button>
     <button id="btn ${producto.id}" class="boton2B1SPJs">Añadir al carrito </button>`;
     divProductos.appendChild(cajaProducto);
+
+
      const btn = document.getElementById(`btn ${producto.id}`)
     btn.addEventListener("click", () => {
         aniadirAlCarrito(producto.id)
@@ -56,21 +58,53 @@ datos.forEach(producto => {
             }
         }).showToast();
     })
+    
+    const btnCompra = document.getElementById(`btnCompra ${producto.id}`)
+btnCompra.addEventListener("click", () => {
+    Swal.fire({
+        title: `Compraste este producto por $${producto.precio}`,
+        icon: "success",
+         confirmButtonText: "Aceptar",
+})
+})
 }) 
 })
-
 
 const carrito = [];
 const aniadirAlCarrito = (id) => {
     const producto = productosFetch.find(producto => producto.id === id)
-    const productoEnElCarito = carrito.find(producto => producto.id === id)
-    if (productoEnElCarito) {
-        productoEnElCarito.cantidad++;
+    const productoEnElCarrito = carrito.find(producto => producto.id === id)
+    if (productoEnElCarrito) {
+        productoEnElCarrito.cantidad++;
     } else {
         carrito.push(producto)
     }
 }
+
+const botonCompraDelCarrito = document.getElementById("botonCompraDelCarrito")
+botonCompraDelCarrito.addEventListener("click", comprarProductos)
+
+function comprarProductos (){
+    let total = 0;
+    carrito.forEach(producto => {
+        total += producto.precio * producto.cantidad;
+    })
+Swal.fire({
+    title: `Compraste todos productos por $${total}`,
+    icon: "success",
+     confirmButtonText: "Aceptar",
+}).then((resultado) => {
+    if(resultado.isConfirmed){
+        carrito.splice(0, carrito.length);
+actualizarCarrito();
+}
+})
+}
+
+
 //console.log(carrito)
+const botonCarrito = document.getElementById("botonCarrito")
+botonCarrito.addEventListener("click", actualizarCarrito)
 
 const carritoDeCompras = document.getElementById("carritoDeCompras");
 const verProductosEnCarrito = document.getElementById("verProductosEnCarrito");
@@ -89,15 +123,15 @@ function actualizarCarrito() {
         <h3 class="h3B3SPJs">${producto.nombre}</h3>
         <p class="pB3SP">$${producto.precio}</p>
         </div>
-        
+
         <button id="btnEliminarDelCarrito" onClick = "eliminarDelCarrito(${producto.id})" class="boton2B1SPJs btnEliminarDC">Eliminar del Carrito </button>  
         </div>
-          
         `
     })
 
     carritoDeCompras.innerHTML = aux;
 }
+
 
 function toastifyBoton(){
     Toastify({
@@ -112,7 +146,7 @@ function toastifyBoton(){
 }
 
 const eliminarDelCarrito = (id) => {
-    const producto = carrito.find(producto => producto.id === id);
+    const producto = carrito.find(producto => producto.id == id);
     carrito.splice(carrito.indexOf(producto), 1);
     actualizarCarrito();
     toastifyBoton();
@@ -152,8 +186,8 @@ vaciarCarrito.addEventListener("click", () => {
         icon: "succes",
         confirmButtonText: "Aceptar",
     })
-        }
+            }
 
     })
-    
+
 }) 
