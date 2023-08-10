@@ -73,7 +73,7 @@ display: flex;
     letter-spacing: 2px;
 }
 
-/*
+
 .box2NavB {
 width: 33%;
 display: flex;
@@ -86,6 +86,7 @@ justify-content: center;
     height: 35px;
     margin-right: 2px;
     padding: 5px 10px;
+    border-radius: 5px;
     color: #2c6e49;
     border: 1px solid;
     cursor: pointer;
@@ -99,7 +100,7 @@ justify-content: center;
     padding-left: 10px;
     font-family: 'Montserrat', sans-serif;
 }
-*/
+
 
 .box3NavB {
     width: 50%;
@@ -381,6 +382,7 @@ footer {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     transition: all 1s;
+    outline: none;
 }
 
 .inputContacto:hover {

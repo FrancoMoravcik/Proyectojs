@@ -1,30 +1,5 @@
 /*DOM Y EVENTOS EN PRODUCTOS*/
 
-/*
-class Producto {
-    constructor(id, imagen, nombre, precio, clase, cantidad) {
-        this.id = id;
-        this.imagen = imagen;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.clase = clase;
-        this.cantidad = cantidad;
-    }
-}
-*/
-/*
-const asus1 = new Producto(1, "img/Asus5.webp", "Notebook Asus X515ea 15 Fhd Corei5 8gb", 198000, "imgJs1", 1);
-const hp1 = new Producto(2, "img/hp3.webp", "Notebook Hp Probook 450 G8 i7 8gb", 448000, "imgJs2", 1);
-const apple1 = new Producto(3, "img/apple3.webp", "Notebook Macbook Pro M1", 790000, "imgJs3", 1);
-const lenovo3 = new Producto(4, "img/lenovo6.webp", "Notebook Lenovo Legion 16 Q R7 32gb", 650000, "imgJs4", 1);
-const asus3 = new Producto(5, "img/asus6.webp", "Notebook Asus Rog Zephyryus R9 16gb", 626000, "imgJs5", 1);
-const hp3 = new Producto(6, "img/hp2.webp", "Notebook Hp Celeron 4gb", 151000, "imgJs6", 1);
-const dell2 = new Producto(8, "img/dell2.webp", "Notebook Dell G15 Ryzen 7 16gb", 347000, "imgJs7", 1);
-const samsung1 = new Producto(7, "img/samsung1.webp", "Notebook Samsung Galaxy Book Pro 360 2en 1", 270000, "imgJs8", 1);
-
-const arrayProductos = [asus1, hp1, apple1, lenovo3, asus3, hp3, samsung1, dell2];
-*/
-
 const divProductos = document.getElementById("divProductos");
 const productosEnJson = "json/archivo.json"
 let productosFetch
